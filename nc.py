@@ -23,4 +23,6 @@ def main():
 			call(s+[i.name],stdout=build)
 		else:build.write(l)
 	build.write("\n")
+	build.close()
+	call("ninja")
 main()
