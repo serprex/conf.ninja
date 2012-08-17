@@ -8,7 +8,7 @@ def main():
 	if fl[:2]=="#!":s=fl[2:].split()
 	else:
 		s=["python"]
-		build.write(fl)
+		conf.seek(0)
 	for l in conf:
 		if l=="%\n":
 			x=[]
