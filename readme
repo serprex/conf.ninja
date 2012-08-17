@@ -1,7 +1,10 @@
 conf.ninja is a basic script to convert conf.ninja files to build.ninja files
 
-The first line of a conf.ninja file may be a shebang. By default it is python
+People like examples: https://github.com/serprex/DoubleFire/blob/master/conf.ninja
 
-conf.ninja is spat out as a build.ninja. Until it hits a line which purely consists of a %. Then the block until the next % line is written to a tempfile and "$shebang $tmp" is piped to build.ninja
+conf.ninja is spat out as a build.ninja. Except for these cases:
+The first line of a conf.ninja file may be a shebang. Defaults as python
+Text between two % lines are put in a tempfile and "$shebang $tmp" is piped to build.ninja
+Line beginning with ! are executed and piped to build.ninja. Useful for !cat rulefile
 
-It's really that simple. You can even use ninja's ninja_syntax module
+Simple. You can even import ninja's ninja_syntax module

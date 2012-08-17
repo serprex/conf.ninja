@@ -12,8 +12,7 @@ def main():
 	for l in conf:
 		if l=="%\n":
 			x=[]
-			while 1:
-				l=conf.readline()
+			for l in conf:
 				if l=="%\n":break
 				x+=l,
 			build.flush()
@@ -21,6 +20,9 @@ def main():
 			i.write("".join(x))
 			i.flush()
 			call(s+[i.name],stdout=build)
+		elif l[0]=="!":
+			build.flush()
+			call(l[1:-1].split(),stdout=build)
 		else:build.write(l)
 	build.write("\n")
 	build.close()
