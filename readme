@@ -1,0 +1,8 @@
+conf.ninja is a basic script to convert conf.ninja files to build.ninja files
+I was lazy and used Python. There is nothing Python centric in the design besides the default shell being Python
+
+The first line of a conf.ninja file may be a shebang. It is not strictly a shebang
+
+conf.ninja is spat out as a build.ninja file except for the above shebang rule. Until it hits a line which purely consists of a %. Then the block of text until the next line solely consisting of a % is written to a temporary file and stdout is piped to build.ninja with the execution of "$shebang $tmp"
+
+It's really that simple. You can even use ninja's "import ninja_syntax" if you stick with python
