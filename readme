@@ -4,4 +4,3 @@ People like examples: https://github.com/serprex/DoubleFire/blob/master/conf.nin
 
 conf.ninja is mostly spat out as a build.ninja
 Text between two % lines are executed with stdout piped to build.ninja
-sys and ninja_syntax are imported by default

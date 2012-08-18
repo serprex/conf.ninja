@@ -1,6 +1,5 @@
 #!/usr/bin/python
 def main():
-	import ninja_syntax
 	import sys
 	conf=open("conf.ninja")
 	sys.stdout=build=open("build.ninja","w")
