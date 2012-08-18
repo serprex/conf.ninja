@@ -1,10 +1,7 @@
-conf.ninja is a basic script to convert conf.ninja files to build.ninja files
+conf.ninja converts conf.ninja to build.ninja
 
 People like examples: https://github.com/serprex/DoubleFire/blob/master/conf.ninja
 
-conf.ninja is spat out as a build.ninja. Except for these cases:
-The first line of a conf.ninja file may be a shebang. Defaults as python
-Text between two % lines are put in a tempfile and "$shebang $tmp" is piped to build.ninja
-Line beginning with ! are executed and piped to build.ninja. Useful for !cat rulefile
-
-Simple. You can even import ninja's ninja_syntax module
+conf.ninja is mostly spat out as a build.ninja
+Text between two % lines are executed with stdout piped to build.ninja
+sys and ninja_syntax are imported by default
