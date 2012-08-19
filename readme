@@ -3,4 +3,5 @@ conf.ninja converts conf.ninja to build.ninja
 People like examples: https://github.com/serprex/DoubleFire/blob/master/conf.ninja
 
 conf.ninja is mostly spat out as a build.ninja
-Text between two % lines are executed with stdout piped to build.ninja
+Blocks between curly brackets are executed with stdout piped to build.ninja
+{$.*?$} is evaluated as a string returning expression. nb {$$ escapes {$
