@@ -1,17 +1,12 @@
 #!/usr/bin/python
 def main():
-	import sys
-	import re
+	import sys, re, itertools
 	expr=re.compile(r"{\$.*?\$}")
 	conf=open("conf.ninja")
 	sys.stdout=build=open("build.ninja","w")
 	for l in conf:
 		if l=="{\n":
-			x=""
-			for l in conf:
-				if l=="}\n":break
-				x+=l
-			exec(x)
+			exec("".join(itertools.takewhile(lambda x:x!="}\n", conf)))
 		else:
 			for start,end in reversed([m.span() for m in expr.finditer(l)]):
 				if l[start+2]=="$":l=l[:start+2]+l[start+3:]

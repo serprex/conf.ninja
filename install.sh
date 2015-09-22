@@ -1,1 +1,1 @@
-ln nc.py /usr/local/bin/conf.ninja
+ln conf.ninja.py /usr/local/bin/conf.ninja
